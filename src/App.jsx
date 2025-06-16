@@ -6,7 +6,7 @@ import Contact from './Pages/Contact'
    return (
      <div>
        <Routes>
-          <Route path="/" element={Contact} />
+          <Route path="/" element={<Contact />} />
        </Routes>
      </div>
    )
