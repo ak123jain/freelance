@@ -70,7 +70,7 @@ const ClothingLanding = () => {
   const collections = [
     {
       title: "Ethereal Evenings",
-      subtitle: "Sophisticated elegance for special moments",
+      subtitle: "Sophisticated elegance for special  ",
       image:
         "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&h=700&fit=crop",
     },
