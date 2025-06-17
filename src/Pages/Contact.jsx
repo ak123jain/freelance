@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Mail } from 'lucide-react';
+import { Mail , Menu, X } from 'lucide-react';
 
 import {
   ChevronRight,
@@ -17,6 +17,8 @@ const ClothingLanding = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showNavbar, setShowNavbar] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
 
   useEffect(() => {
     setIsVisible(true);
@@ -92,13 +94,13 @@ const ClothingLanding = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-stone-50 overflow-hidden">
       {/* Navigation */}
       <nav
-        className={`fixed z-50 w-3xl transition-all duration-500 ml-96   ${
+        className={`fixed z-50 w-3xl transition-all duration-500 lg:ml-80 ml-24 ${
           showNavbar
             ? "top-6 rounded-3xl bg-white/90 shadow-lg border border-gray-200 backdrop-blur-lg"
             : "top-0 rounded-none bg-transparent border-none shadow-none"
         }`}
       >
-        <div className="max-w-4xl mx-auto px-7 py-4  ">
+        <div className="max-w-4xl mx-auto px-7 py-4   ">
           <div className="flex items-center gap-8 ">
             {/* Logo */}
             <div className="flex items-center space-x-2">
@@ -136,9 +138,37 @@ const ClothingLanding = () => {
                   2
                 </span>
               </button>
+              <button
+              className="md:hidden p-2 rounded-full hover:bg-gray-100"
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
+              {mobileOpen ? (
+                                <X className="w-6 h-6 text-gray-800" />
+
+              ) : (
+                                <Menu className="w-6 h-6 text-gray-800" />
+
+              )}
+            </button>
             </div>
 
           </div>
+
+          {mobileOpen && (
+            <div className="">
+              {["Collections", "New Arrivals", "About", "Contact"].map(
+                ((item) => 
+                  <a
+                    key={item}
+                    href="#"
+                    className="block px-4 py-2 text-gray-700 hover:text-purple-600 transition-colors font-medium"
+                  >
+                    {item}
+                  </a>
+                )
+              )}
+            </div>
+          )}
         </div>
       </nav>
 
