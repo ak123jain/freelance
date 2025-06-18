@@ -94,7 +94,7 @@ const ClothingLanding = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-stone-50 overflow-hidden">
       {/* Navigation */}
       <nav
-        className={`fixed z-50 w-3xl transition-all duration-500 lg:ml-80 ml-24 ${
+        className={`fixed z-50 w-3xl transition-all duration-500 lg:ml-80 ml-20 ${
           showNavbar
             ? "top-6 rounded-3xl bg-white/90 shadow-lg border border-gray-200 backdrop-blur-lg"
             : "top-0 rounded-none bg-transparent border-none shadow-none"
